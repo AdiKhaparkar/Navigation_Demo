@@ -7,7 +7,7 @@ const Feed = () => {
   return (
     <View style={styles.container}>
       <Text>FeedScreen</Text>
-      <Text>(route.params.productId)</Text>
+      <Text>Employee Batch Number: {route.params?.data}</Text>
     </View>
   );
 };
