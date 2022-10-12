@@ -1,17 +1,24 @@
-import {View, Text, StyleSheet, Button, TextInput, TouchableOpacity, StatusBar
+import {
+  View,
+  Text,
+  StyleSheet,
+  Button,
+  TextInput,
+  TouchableOpacity,
 } from 'react-native';
 import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import About from './About';
 import Feed from './Feed';
+
 const Home = () => {
   const navigation = useNavigation();
   const [entryCode, setEntryCode] = useState('');
+
   return (
     <View style={styles.container}>
-      
       <Text style={styles.Heading}>HomeScreen</Text>
-      
+
       <TextInput
         style={styles.TextInput}
         placeholder="Enter Name"

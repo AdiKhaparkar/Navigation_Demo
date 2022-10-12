@@ -6,8 +6,10 @@ import Icon from 'react-native-vector-icons/AntDesign';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Button} from 'react-native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 const HomeStack = createNativeStackNavigator();
+
 const HomeNavigator = () => {
   return (
     <HomeStack.Navigator>
@@ -29,8 +31,18 @@ const HomeNavigator = () => {
     </HomeStack.Navigator>
   );
 };
-
 const Tab = createBottomTabNavigator();
+ const Drawer = createDrawerNavigator();
+
+const  MyDrawer=()=>{
+  return (
+    <Drawer.Navigator>
+      <Drawer.Screen name="FeedDrawer" component={Feed} />
+      <Drawer.Screen name="AboutDrawer" component={About} />
+    </Drawer.Navigator>
+  );
+}
+
 
 const AppNavigator = () => {
   return (
@@ -57,9 +69,10 @@ const AppNavigator = () => {
           tabBarIcon: props => <Icon name="user" {...props} />,
         }}
       />
+      
       <Tab.Screen
         name="Feed"
-        component={Feed}
+        component={MyDrawer}
         options={{
           tabBarIcon: props => <Icon name="database" {...props} />,
         }}
@@ -67,4 +80,7 @@ const AppNavigator = () => {
     </Tab.Navigator>
   );
 };
+
+
+
 export default AppNavigator;
